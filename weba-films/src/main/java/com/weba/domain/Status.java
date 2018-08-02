@@ -1,4 +1,4 @@
-package com.webafilmes.domain;
+package com.weba.domain;
 
 
 public enum Status {

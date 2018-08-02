@@ -1,4 +1,4 @@
-package com.webafilmes.domain;
+package com.weba.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public class Filme {
     private Long id;
     private String nome;
     @OneToOne(cascade = CascadeType.ALL)
-    private Arquivo arquivo;
+    private ArquivoDisco arquivoDisco;
     private Status status;
 
     @Override
@@ -22,7 +22,7 @@ public class Filme {
         return "Filme{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", arquivo=" + arquivo +
+                ", arquivoDisco=" + arquivoDisco +
                 ", status=" + status +
                 '}';
     }

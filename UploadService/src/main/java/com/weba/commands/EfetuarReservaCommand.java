@@ -1,4 +1,4 @@
-package br.edu.ifpb.uploadservice.consumer.command;
+package com.weba.commands;
 
 import io.eventuate.tram.commands.common.Command;
 import lombok.Getter;
@@ -17,4 +17,6 @@ public class EfetuarReservaCommand implements Command {
         this.status = status;
     }
 
+    public EfetuarReservaCommand() {
+    }
 }

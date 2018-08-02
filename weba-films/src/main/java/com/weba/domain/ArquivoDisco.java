@@ -1,4 +1,4 @@
-package com.webafilmes.domain;
+package com.weba.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-public class Arquivo {
+public class ArquivoDisco {
 
     @Id
     @GeneratedValue
@@ -21,7 +21,7 @@ public class Arquivo {
 
     @Override
     public String toString() {
-        return "Arquivo{" +
+        return "ArquivoDisco{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", formato='" + formato + '\'' +

@@ -1,8 +1,5 @@
-package com.webafilmes.commands;
+package com.weba.commands;
 
-import com.webafilmes.domain.Filme;
-
-import com.webafilmes.domain.Status;
 import io.eventuate.tram.commands.common.Command;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +15,9 @@ public class EfetuarReservaCommand implements Command {
         this.idFilme = idFilme;
         this.tamanhoArquivo = tamanhoArquivo;
         this.status = status;
+    }
+
+    public EfetuarReservaCommand() {
     }
 
 }

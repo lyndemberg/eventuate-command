@@ -1,7 +1,7 @@
-package com.webafilmes.web;
+package com.weba.web;
 
-import com.webafilmes.domain.Filme;
-import com.webafilmes.service.FilmeService;
+import com.weba.domain.Filme;
+import com.weba.service.FilmeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.webafilmes.config;
+package com.weba.config;
 
 public class CommandProducerParameters {
 

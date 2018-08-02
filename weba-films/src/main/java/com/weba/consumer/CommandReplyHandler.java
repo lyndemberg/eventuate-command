@@ -1,9 +1,9 @@
-package com.webafilmes.consumer;
+package com.weba.consumer;
 
-import com.webafilmes.commands.EfetuarReservaCommand;
-import com.webafilmes.domain.Filme;
-import com.webafilmes.domain.Status;
-import com.webafilmes.service.FilmeService;
+import com.weba.commands.EfetuarReservaCommand;
+import com.weba.domain.Filme;
+import com.weba.domain.Status;
+import com.weba.service.FilmeService;
 import io.eventuate.tram.commands.consumer.CommandHandlers;
 import io.eventuate.tram.commands.consumer.CommandHandlersBuilder;
 import io.eventuate.tram.commands.consumer.CommandMessage;
@@ -11,6 +11,7 @@ import io.eventuate.tram.commands.consumer.PathVariables;
 import io.eventuate.tram.messaging.common.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static io.eventuate.tram.commands.consumer.CommandHandlerReplyBuilder.withFailure;
 import static io.eventuate.tram.commands.consumer.CommandHandlerReplyBuilder.withSuccess;
@@ -21,11 +22,11 @@ public class CommandReplyHandler {
 
     private String commandChannel;
 
-    private final FilmeService filmeService;
+    @Autowired
+    private FilmeService filmeService;
 
-    public CommandReplyHandler(String commandChannel, FilmeService filmeService) {
+    public CommandReplyHandler(String commandChannel) {
         this.commandChannel = commandChannel;
-        this.filmeService = filmeService;
     }
 
     public CommandHandlers getCommandHandlers() {
