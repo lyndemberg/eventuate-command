@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-public class ArquivoDisco {
+public class ArquivoFilme {
 
     @Id
     @GeneratedValue
@@ -21,7 +21,7 @@ public class ArquivoDisco {
 
     @Override
     public String toString() {
-        return "ArquivoDisco{" +
+        return "ArquivoFilme{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", formato='" + formato + '\'' +

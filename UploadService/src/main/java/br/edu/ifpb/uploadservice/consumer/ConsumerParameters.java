@@ -1,6 +1,6 @@
 package br.edu.ifpb.uploadservice.consumer;
 
-public class CommandConsumerParameters {
+public class ConsumerParameters {
   private String commandChannel = "webaServiceCommandChannel";
   private String dispatcherId = "webaServiceCommandDispatcher";
 

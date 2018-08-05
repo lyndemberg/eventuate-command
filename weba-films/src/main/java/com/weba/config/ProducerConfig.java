@@ -1,6 +1,5 @@
 package com.weba.config;
 
-import com.weba.consumer.CommandReplyHandler;
 import io.eventuate.jdbckafka.TramJdbcKafkaConfiguration;
 import io.eventuate.tram.commands.common.ChannelMapping;
 import io.eventuate.tram.commands.common.DefaultChannelMapping;
@@ -13,20 +12,15 @@ import java.util.Collections;
 
 @Configuration
 @Import({TramCommandProducerConfiguration.class,TramJdbcKafkaConfiguration.class})
-public class EventuateConfig {
+public class ProducerConfig {
 
     @Bean
-    public CommandProducerParameters commandProducerParameters(){
-        return new CommandProducerParameters();
+    public ProducerParameters commandProducerParameters(){
+        return new ProducerParameters();
     }
 
     @Bean
-    public CommandReplyHandler commandConsumerHandler(CommandProducerParameters parameters){
-        return new CommandReplyHandler(parameters.getReplyChannel());
-    }
-
-    @Bean
-    public ChannelMapping channelMapping(CommandProducerParameters config) {
+    public ChannelMapping channelMapping(ProducerParameters config) {
         return new DefaultChannelMapping(Collections.singletonMap("WebaAggregate", config.getCommandChannel()));
     }
 

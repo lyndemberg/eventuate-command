@@ -14,7 +14,9 @@ public class Filme {
     private Long id;
     private String nome;
     @OneToOne(cascade = CascadeType.ALL)
-    private ArquivoDisco arquivoDisco;
+    private ArquivoFilme arquivoFilme;
+    private String idReserva;
+    @Enumerated(value = EnumType.STRING)
     private Status status;
 
     @Override
@@ -22,7 +24,8 @@ public class Filme {
         return "Filme{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", arquivoDisco=" + arquivoDisco +
+                ", arquivoFilme=" + arquivoFilme +
+                ", idReserva=" + idReserva +
                 ", status=" + status +
                 '}';
     }

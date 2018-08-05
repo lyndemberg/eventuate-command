@@ -9,25 +9,25 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Collections;
 
 @Configuration
-public class CommandConsumerConfiguration {
+public class ConsumerConfig {
 
     @Bean
-    public CommandConsumerHandler commandConsumerHandler(CommandConsumerParameters parameters){
+    public CommandConsumerHandler commandConsumerHandler(ConsumerParameters parameters){
         return new CommandConsumerHandler(parameters.getCommandChannel());
     }
 
     @Bean
-    public CommandDispatcher commandDispatcher(CommandConsumerParameters parameters, CommandConsumerHandler handler) {
+    public CommandDispatcher commandDispatcher(ConsumerParameters parameters, CommandConsumerHandler handler) {
         return new CommandDispatcher(parameters.getDispatcherId(), handler.getCommandHandlers());
     }
 
     @Bean
-    public CommandConsumerParameters commandConsumerParameters() {
-        return new CommandConsumerParameters();
+    public ConsumerParameters commandConsumerParameters() {
+        return new ConsumerParameters();
     }
 
     @Bean
-    public ChannelMapping channelMapping(CommandConsumerParameters config) {
+    public ChannelMapping channelMapping(ConsumerParameters config) {
         return new DefaultChannelMapping(Collections.singletonMap("WebaAggregate", config.getCommandChannel()));
     }
 

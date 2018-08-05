@@ -1,9 +1,10 @@
 package com.weba.config;
 
-public class CommandProducerParameters {
+public class ProducerParameters {
 
     private String commandChannel = "webaServiceCommandChannel";
-    private String replyChannel = "webaServiceReplyChannel";
+    private String replyChannel = "webaFilmsReplyChannel";
+    private String subscriberId = "weba-films";
 
     public String getCommandChannel() {
         return commandChannel;
@@ -19,5 +20,13 @@ public class CommandProducerParameters {
 
     public void setReplyChannel(String replyChannel) {
         this.replyChannel = replyChannel;
+    }
+
+    public String getSubscriberId() {
+        return subscriberId;
+    }
+
+    public void setSubscriberId(String subscriberId) {
+        this.subscriberId = subscriberId;
     }
 }

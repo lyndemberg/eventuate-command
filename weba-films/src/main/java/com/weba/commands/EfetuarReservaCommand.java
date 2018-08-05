@@ -9,15 +9,12 @@ import lombok.Setter;
 public class EfetuarReservaCommand implements Command {
     private Long idFilme;
     private Long tamanhoArquivo;
-    private String status;
-
-    public EfetuarReservaCommand(Long idFilme, Long tamanhoArquivo, String status) {
-        this.idFilme = idFilme;
-        this.tamanhoArquivo = tamanhoArquivo;
-        this.status = status;
-    }
 
     public EfetuarReservaCommand() {
     }
 
+    public EfetuarReservaCommand(Long idFilme, Long tamanhoArquivo) {
+        this.idFilme = idFilme;
+        this.tamanhoArquivo = tamanhoArquivo;
+    }
 }
